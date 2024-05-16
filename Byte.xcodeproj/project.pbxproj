@@ -11,6 +11,9 @@
 		6E1040E62BF3A9CC00A94632 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1040E52BF3A9CC00A94632 /* ContentView.swift */; };
 		6E1040E82BF3A9CD00A94632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1040E72BF3A9CD00A94632 /* Assets.xcassets */; };
 		6E1040EB2BF3A9CD00A94632 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1040EA2BF3A9CD00A94632 /* Preview Assets.xcassets */; };
+		6E24DADA2BF67F05009F57AA /* XCAOpenAIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 6E24DAD92BF67F05009F57AA /* XCAOpenAIClient */; };
+		6E24DADD2BF67F27009F57AA /* SiriWaveView in Frameworks */ = {isa = PBXBuildFile; productRef = 6E24DADC2BF67F27009F57AA /* SiriWaveView */; };
+		6E24DADF2BF680A4009F57AA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E24DADE2BF680A4009F57AA /* Models.swift */; };
 		6E96E7B42BF5211900C81C60 /* SpaceGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E96E7AC2BF5211900C81C60 /* SpaceGrotesk-Light.ttf */; };
 		6E96E7B52BF5211900C81C60 /* SpaceGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E96E7AD2BF5211900C81C60 /* SpaceGrotesk-Regular.ttf */; };
 		6E96E7B62BF5211900C81C60 /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E96E7AE2BF5211900C81C60 /* SpaceGrotesk-SemiBold.ttf */; };
@@ -28,6 +31,7 @@
 		6E1040E72BF3A9CD00A94632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E1040EA2BF3A9CD00A94632 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6E1040EC2BF3A9CD00A94632 /* Byte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Byte.entitlements; sourceTree = "<group>"; };
+		6E24DADE2BF680A4009F57AA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		6E96E7AC2BF5211900C81C60 /* SpaceGrotesk-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Light.ttf"; sourceTree = "<group>"; };
 		6E96E7AD2BF5211900C81C60 /* SpaceGrotesk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Regular.ttf"; sourceTree = "<group>"; };
 		6E96E7AE2BF5211900C81C60 /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E24DADA2BF67F05009F57AA /* XCAOpenAIClient in Frameworks */,
+				6E24DADD2BF67F27009F57AA /* SiriWaveView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,7 @@
 				6E1040EC2BF3A9CD00A94632 /* Byte.entitlements */,
 				6E96E7BC2BF522B900C81C60 /* Info.plist */,
 				6E1040E92BF3A9CD00A94632 /* Preview Content */,
+				6E24DADE2BF680A4009F57AA /* Models.swift */,
 			);
 			path = Byte;
 			sourceTree = "<group>";
@@ -135,6 +142,10 @@
 			dependencies = (
 			);
 			name = Byte;
+			packageProductDependencies = (
+				6E24DAD92BF67F05009F57AA /* XCAOpenAIClient */,
+				6E24DADC2BF67F27009F57AA /* SiriWaveView */,
+			);
 			productName = Byte;
 			productReference = 6E1040E02BF3A9CC00A94632 /* Byte.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +174,10 @@
 				Base,
 			);
 			mainGroup = 6E1040D72BF3A9CC00A94632;
+			packageReferences = (
+				6E24DAD82BF67F05009F57AA /* XCRemoteSwiftPackageReference "XCAOpenAIClient" */,
+				6E24DADB2BF67F27009F57AA /* XCRemoteSwiftPackageReference "SiriWaveView" */,
+			);
 			productRefGroup = 6E1040E12BF3A9CC00A94632 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E24DADF2BF680A4009F57AA /* Models.swift in Sources */,
 				6E1040E62BF3A9CC00A94632 /* ContentView.swift in Sources */,
 				6E1040E42BF3A9CC00A94632 /* ByteApp.swift in Sources */,
 			);
@@ -339,10 +355,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Byte/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Talk with AI Assistant";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mansour.Byte;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,10 +385,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Byte/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Talk with AI Assistant";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mansour.Byte;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -401,6 +421,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E24DAD82BF67F05009F57AA /* XCRemoteSwiftPackageReference "XCAOpenAIClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/XCAOpenAIClient";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		6E24DADB2BF67F27009F57AA /* XCRemoteSwiftPackageReference "SiriWaveView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/SiriWaveView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E24DAD92BF67F05009F57AA /* XCAOpenAIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E24DAD82BF67F05009F57AA /* XCRemoteSwiftPackageReference "XCAOpenAIClient" */;
+			productName = XCAOpenAIClient;
+		};
+		6E24DADC2BF67F27009F57AA /* SiriWaveView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E24DADB2BF67F27009F57AA /* XCRemoteSwiftPackageReference "SiriWaveView" */;
+			productName = SiriWaveView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E1040D82BF3A9CC00A94632 /* Project object */;
 }
