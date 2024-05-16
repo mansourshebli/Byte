@@ -16,3 +16,11 @@ enum VoiceType: String, Codable, Hashable, Sendable, CaseIterable {
     case shimmer
 }
 
+enum VoiceChatState {
+    case idle
+    case recordingSpeech
+    case processingSpeech
+    case playingSpeech
+    case error(Error)
+}
+
