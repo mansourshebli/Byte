@@ -13,8 +13,8 @@ import XCAOpenAIClient
 
 @Observable
 class ViewModel: NSObject{
-    
-    let client = OpenAIClient(apiKey: "sk-proj-FGxz7SVfWNKjt64VDjDET3BlbkFJPMjYQVjFMPgCuyItn59m")
+    // sample API Key!
+    let client = OpenAIClient(apiKey: "sk-proj-FGxz7SVfWNKjt64VDjDET3BlbkFJPMjYQVjFMPgCuyItn59m") // replace with your own API key from OpenAI
     
     var selectedVoice = VoiceType.alloy
     var state = VoiceChatState.idle {
